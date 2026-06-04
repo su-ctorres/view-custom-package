@@ -25,7 +25,7 @@ jobs:
             YOURCUSTOM_PACKAGE-NAME dist/
 
       - name: Upload zip artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: YOURCUSTOM_PACKAGE-NAME
           path: dist/*
