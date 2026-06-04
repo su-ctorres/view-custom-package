@@ -1,0 +1,31 @@
+name: Compress customization package
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  compress:
+    name: Create zip artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Stage customization package
+        run: |
+          mkdir -p dist
+          rsync -a \
+            --exclude ".DS_Store" \
+            --exclude "__MACOSX" \
+            YOURCUSTOM_PACKAGE-NAME dist/
+
+      - name: Upload zip artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: YOURCUSTOM_PACKAGE-NAME
+          path: dist/*
