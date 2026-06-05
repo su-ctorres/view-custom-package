@@ -1,6 +1,12 @@
 # View Customization Package
 
-This repository stores the `YOURCUSTOM_PACKAGE-NAME` customization package and includes a GitHub Action that creates a downloadable zip artifact.
+This repository stores the `YOURCUSTOM_PACKAGE-NAME` VE or NDE customization package and includes a GitHub Action that creates a downloadable zip artifact.
+
+## How to Get Started
+
+1. Delete the `YOURCUSTOM_PACKAGE-NAME` folder and replace with your VE or NDE custom package.
+2. Update [`.github/workflows/compress-package.yml`](.github/workflows/compress-package.yml) to change `YOURCUSTOM_PACKAGE-NAME` to your actual package name in both locations.
+3. Commit and push your changes to GitHub.
 
 ## How to Update the Package
 
